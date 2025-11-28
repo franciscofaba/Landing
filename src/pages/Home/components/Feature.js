@@ -5,7 +5,6 @@ import {
   Camera, 
   Mic, 
   Smile, 
-  MoreHorizontal, 
   CheckCheck,
   Delete
 } from "lucide-react";

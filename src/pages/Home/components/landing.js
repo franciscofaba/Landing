@@ -1,4 +1,4 @@
-import { Apple, Play, Search, CheckCircle2, Triangle, Menu } from "lucide-react";
+import { Apple, Play, Search, CheckCircle2, Triangle } from "lucide-react";
 
 function LandingPage() {
   return (

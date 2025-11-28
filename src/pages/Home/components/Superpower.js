@@ -3,7 +3,6 @@ import {
   Mic, 
   CalendarDays, 
   StickyNote, 
-  BellRing, 
   Users, 
   ArrowRight,
   Play

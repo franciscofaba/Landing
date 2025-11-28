@@ -1,4 +1,3 @@
-import { Zap } from "lucide-react"; // Solo decorativo si se necesita
 
 function AppHero() {
   return (

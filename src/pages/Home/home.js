@@ -2,7 +2,6 @@ import "./home.css";
 import Bottomfooter from "./components/footer";
 import Navbar from "./components/navbar";
 import NarrativeSection from "./components/NarrativeSection";
-import Video from "./components/video";
 import AppHero from "./components/apphero";
 import Feature from "./components/Feature";
 import LandingPage from "./components/landing";
