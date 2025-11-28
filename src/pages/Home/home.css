@@ -1,0 +1,10 @@
+.contenedor {
+  margin: 0;
+  padding: 0;
+  background-image: url('../../../public/fondo.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Hace que la imagen se quede fija al hacer scroll */
+  height: 100vh; /* Asegura que ocupe el 100% de la altura de la ventana */
+}
