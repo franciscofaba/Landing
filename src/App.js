@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 import Home from "./pages/Home/home";
 import DataDeletion from "./pages/DataDeletionPolicy/DataDeletion";
 import TermsOfService from "./pages/TermsOfService/TermsOfService";

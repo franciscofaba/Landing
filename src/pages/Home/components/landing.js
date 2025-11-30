@@ -1,4 +1,3 @@
-import { Apple, Play, Search, CheckCircle2, Triangle } from "lucide-react";
 import { 
   ChevronLeft, 
   Check, 
@@ -182,47 +181,6 @@ function LandingPage() {
   );
 }
 
-// --- SUBCOMPONENTES ---
 
-function AppCard({ title, bgImage, textColor = "text-white" }) {
-    return (
-        <div className="relative w-full h-32 rounded-2xl overflow-hidden shadow-sm shrink-0 group cursor-pointer">
-            <div 
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                style={{ backgroundImage: `url(${bgImage})` }}
-            />
-            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors" />
-            <div className={`absolute inset-0 flex items-center justify-center text-xl font-bold ${textColor}`}>
-                {title}
-            </div>
-        </div>
-    )
-}
-
-function NavItem({ icon: Icon, label, active }) {
-    return (
-        <div className={`flex flex-col items-center gap-1 ${active ? 'text-slate-800' : 'text-slate-400'}`}>
-            <Icon className="w-6 h-6" strokeWidth={active ? 2.5 : 2} />
-            <span className="text-[10px] font-medium">{label}</span>
-        </div>
-    )
-}
-
-function StoreButton({ type }) {
-    const isApple = type === 'apple';
-    const Icon = isApple ? Apple : Play;
-    const text1 = isApple ? 'Download on the' : 'GET IT ON';
-    const text2 = isApple ? 'App Store' : 'Google Play';
-
-    return (
-        <button className="bg-black text-white px-4 py-2 rounded-lg flex items-center gap-3 transition-transform hover:-translate-y-1 active:scale-95 shadow-lg shadow-slate-200">
-            <Icon className={`fill-current ${isApple ? 'w-8 h-8' : 'w-7 h-7'}`} strokeWidth={0} />
-            <div className="flex flex-col items-start leading-none">
-                <span className="text-[10px] uppercase font-medium tracking-wide opacity-80">{text1}</span>
-                <span className="text-lg font-bold font-sans">{text2}</span>
-            </div>
-        </button>
-    )
-}
 
 export default LandingPage;

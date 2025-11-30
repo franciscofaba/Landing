@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import { Shield, Printer, ArrowRight, Clock } from 'lucide-react';
 
 // 1. DATA: Idealmente esto vendría de un archivo separado (ej: content/terms.js)

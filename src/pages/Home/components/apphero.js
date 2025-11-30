@@ -1,4 +1,3 @@
-import React from "react";
 
 // --- 1. COMPONENTE DE LA NAVE 2D (Estilo Vectorial) ---
 const Rocket2D = () => {

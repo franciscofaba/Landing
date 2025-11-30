@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Trash2, AlertTriangle, CheckCircle, Clock, Download, ChevronRight, HelpCircle } from 'lucide-react';
+import { useState } from 'react';
+import { Trash2, AlertTriangle, CheckCircle, Clock, Download, ChevronRight} from 'lucide-react';
 
 export default function DataDeletion() {
   const [formStatus, setFormStatus] = useState('idle'); // idle, submitting, success
