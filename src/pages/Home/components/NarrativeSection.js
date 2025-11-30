@@ -1,13 +1,14 @@
 function NarrativeSection() {
   return (
-    <section className="min-h-screen bg-white flex items-center justify-center py-24 px-6 font-sans">
+    <section className="min-h-screen space flex items-center justify-center py-24 px-6 font-sans">
+      
       <div className="max-w-2xl mx-auto">
         
         {/* Contenedor de texto con ritmo vertical amplio */}
-        <div className="space-y-16 text-2xl md:text-4xl font-light leading-snug tracking-tight text-neutral-900">
+        <div className="space-y-16 text-2xl md:text-4xl font-semibold leading-snug tracking-tight text-yellow-500">
           
           {/* Bloque 1 */}
-          <p>
+          <p className="text-cyan-500">
             Has normalizado vivir con la cabeza a punto de explotar.
             <br />
             <span className=" transition-colors hover:text-neutral-500 duration-500">
@@ -19,9 +20,9 @@ function NarrativeSection() {
           <div className="space-y-4">
             <p className="">
               Siempre hay algo pendiente. Algo que se te olvida. 
-              Algo que deberías estar haciendo ahora mismo...
+              Algo que deberías estar haciendo ahora mismo.
             </p>
-            <p className="font-medium text-black">
+            <p className="font-medium ">
               ...pero no sabes qué.
             </p>
           </div>
@@ -29,17 +30,17 @@ function NarrativeSection() {
           {/* Bloque 3 */}
           <p>
             Apuntas cosas para no olvidarlas. Pero acabas olvidando por qué las apuntaste.
-            <span className="block mt-4 text-neutral-700 border-l-2 border-neutral-100 pl-6 italic">
+            <span className="block mt-4 ">
               Como si la organización fuera el objetivo, y no la solución.
             </span>
           </p>
 
           {/* Bloque 4 - Cierre / Solución */}
           <div className="pt- opacity-0 animate-fade-in-up fill-mode-forwards" style={{ animationDelay: '0.5s' }}>
-            <p className="text-3xl md:text-4xl text-neutral-900 mb-2">
+            <p className="text-3xl md:text-4xl  mb-2">
               Hasta que decides soltar.
             </p>
-            <p className="text-3xl md:text-4xl font-bold text-black">
+            <p className="text-3xl md:text-4xl font-bold ">
               Y recuperas tu paz mental.
             </p>
           </div>

@@ -23,22 +23,22 @@ function Bottomfooter() {
           </div>
           <div className="flex gap-6">
             <a
-              href="#"
+              href="/terms"
               className="text-gray-400 hover:text-gray-900 text-sm transition-colors"
             >
-              Twitter
+              Términos y Condiciones
             </a>
             <a
-              href="#"
+              href="/privacy"
               className="text-gray-400 hover:text-gray-900 text-sm transition-colors"
             >
-              GitHub
+              Política de Privacidad
             </a>
             <a
-              href="#"
+              href="/data-Policy"
               className="text-gray-400 hover:text-gray-900 text-sm transition-colors"
             >
-              Discord
+              Política de Eliminación
             </a>
           </div>
         </div>
