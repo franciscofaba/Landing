@@ -45,13 +45,13 @@ function LandingPage() {
         </div>
 
         {/* RIGHT CONTENT (PHONE MOCKUP) */}
-        <div className="w-full md:w-1/2 flex justify-center md:justify-end relative">
+        <div className="w-full md:w-1/2 flex justify-center md:justify-end relative ">
             
           {/* Sombra dramática detrás del teléfono (como en la imagen original) */}
-          <div className="absolute top-10 right-0 w-[80%] h-[90%] bg-slate-200/50 rounded-full blur-[60px] -z-10 transform translate-x-10" />
+          <div className="absolute top-10 right-0 w-[80%] h-[90%] bg-slate-200/50 rounded-full blur-[60px] -z-10 transform translate-x-10 " />
 
           {/* EL TELÉFONO */}
-          <div className="relative w-[320px] h-[680px] bg-white rounded-[50px] border-[12px] border-slate-800 shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] overflow-hidden">
+          <div className="relative w-[320px] h-[680px] bg-white rounded-[50px] border-[12px] border-slate-800 shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] overflow-hidden shadow-xl shadow-gray-500 ">
             
             {/* Notch */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-7 bg-slate-800 rounded-b-2xl z-30"></div>
