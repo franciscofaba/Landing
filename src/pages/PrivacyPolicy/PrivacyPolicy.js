@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Lock, Eye, Database, Cookie, ShieldCheck, Server, Mail } from 'lucide-react';
+import { useNavigate } from "react-router-dom";
 
 // --- DATA: Estructura de la política ---
 const privacySections = [
@@ -7,56 +8,157 @@ const privacySections = [
     id: 'info-collection',
     title: '1. Información que Recopilamos',
     icon: <Database size={20} />,
-    type: 'table', // Renderizado especial
+    type: 'table',
     content: [
-      { dato: 'Identificación', detalle: 'Nombre, Email, Teléfono', proposito: 'Creación de cuenta y soporte.' },
-      { dato: 'Financiero', detalle: 'Historial de transacciones (no guardamos tarjetas completas)', proposito: 'Procesamiento de pagos.' },
-      { dato: 'Técnico', detalle: 'Dirección IP, Tipo de navegador, SO', proposito: 'Seguridad y análisis de errores.' },
+      { 
+        dato: 'Datos Personales',
+        detalle: 'Nombre, número de WhatsApp, correo (solo si el usuario lo entrega o conecta Google Calendar).',
+        proposito: 'Identificación del usuario y funcionamiento del asistente.'
+      },
+      {
+        dato: 'Contenido del Usuario',
+        detalle: 'Mensajes enviados a Harold, imágenes o audios enviados por WhatsApp.',
+        proposito: 'Interpretar solicitudes y ejecutar automatizaciones personales.'
+      },
+      {
+        dato: 'Datos Generados en el Servicio',
+        detalle: 'Recordatorios, llamadas programadas, reuniones calendarizadas, listas creadas, contactos creados e historial conversacional.',
+        proposito: 'Permitir que Harold recuerde, gestione y ejecute las acciones solicitadas.'
+      },
+      {
+        dato: 'Datos Técnicos',
+        detalle: 'ID de mensaje de WhatsApp, ID de thread de OpenAI, metadata técnica y logs de ejecución.',
+        proposito: 'Seguridad, auditoría interna y diagnóstico de errores.'
+      },
+      {
+        dato: 'Datos Externos',
+        detalle: 'Eventos creados en Google Calendar y tokens OAuth (calendar.events + email).',
+        proposito: 'Permitir agendar reuniones y recordatorios en el calendario del usuario.'
+      }
     ]
   },
+
   {
     id: 'usage',
     title: '2. Cómo Usamos sus Datos',
     icon: <Eye size={20} />,
     type: 'text',
-    content: `Utilizamos su información personal para proporcionar y mantener nuestro servicio, notificarle sobre cambios, permitir funciones interactivas, brindar atención al cliente y recopilar análisis valiosos para mejorar nuestra plataforma.`
+    content: `
+Utilizamos los datos exclusivamente para ejecutar las funciones del asistente Harold, tales como:
+
+• Crear y administrar recordatorios.  
+• Agendar llamadas.  
+• Crear reuniones en Google Calendar.  
+• Crear listas y contactos.  
+• Procesar imágenes enviadas por WhatsApp.  
+• Mantener un historial para asegurar continuidad en la experiencia.  
+
+No utilizamos los datos para publicidad, no se venden a terceros y no se usan para entrenar modelos externos.`
   },
+
   {
     id: 'third-parties',
-    title: '3. Terceros y Procesadores',
+    title: '3. Servicios Externos con los que Compartimos Datos',
     icon: <Server size={20} />,
-    type: 'cards', // Renderizado de tarjetas
+    type: 'cards',
     content: [
-      { name: 'Amazon Web Services', role: 'Hosting e Infraestructura', country: 'EE.UU.' },
-      { name: 'Stripe', role: 'Procesamiento de Pagos', country: 'EE.UU.' },
-      { name: 'Google Analytics', role: 'Analítica Web', country: 'EE.UU.' },
+      {
+        name: 'Meta – WhatsApp Cloud API',
+        role: 'Recepción y envío de mensajes.',
+        country: 'Internacional'
+      },
+      {
+        name: 'Firebase – Google Cloud',
+        role: 'Almacenamiento de datos del usuario.',
+        country: 'EE.UU.'
+      },
+      {
+        name: 'Google Calendar API',
+        role: 'Agendamiento de reuniones y recordatorios.',
+        country: 'EE.UU.'
+      },
+      {
+        name: 'OpenAI',
+        role: 'Procesamiento del contenido del mensaje para interpretar la intención.',
+        country: 'EE.UU.'
+      },
+      {
+        name: 'Twilio',
+        role: 'Ejecución de llamadas programadas (solo se envía el número del usuario).',
+        country: 'EE.UU.'
+      },
+      {
+        name: 'Google Cloud Tasks',
+        role: 'Ejecución de recordatorios en horarios futuros.',
+        country: 'EE.UU.'
+      }
     ]
   },
+
   {
     id: 'cookies',
-    title: '4. Política de Cookies',
+    title: '4. Cookies y Tecnologías Similares',
     icon: <Cookie size={20} />,
     type: 'text',
-    content: `Utilizamos cookies y tecnologías de seguimiento similares para rastrear la actividad en nuestro servicio y mantener cierta información. Puede indicarle a su navegador que rechace todas las cookies o que indique cuándo se envía una cookie.`
+    content: `
+Nuestro servicio principal funciona a través de WhatsApp y no utiliza cookies para operar.  
+Solo el sitio web informativo puede usar cookies básicas para funcionamiento y métricas internas.`
   },
+
   {
     id: 'rights',
-    title: '5. Sus Derechos (GDPR/CCPA)',
+    title: '5. Derechos del Usuario',
     icon: <ShieldCheck size={20} />,
     type: 'list',
     content: [
-      'Derecho de Acceso: Solicitar una copia de sus datos.',
-      'Derecho de Rectificación: Corregir datos inexactos.',
-      'Derecho al Olvido: Solicitar la eliminación de su cuenta.',
-      'Derecho a la Portabilidad: Recibir sus datos en formato estructurado.'
+      'Derecho a Solicitar Acceso: El usuario puede solicitar una copia de todos los datos almacenados.',
+      'Derecho a Rectificación: Se puede corregir cualquier información incorrecta.',
+      'Derecho a Eliminación Total (“Derecho al Olvido”): El usuario puede solicitar borrar todos sus datos almacenados en Firebase.',
+      'Derecho a Desvincular Google Calendar: Eliminamos los tokens OAuth inmediatamente si el usuario lo solicita.',
+      'Derecho a Oposición: El usuario puede dejar de utilizar Harold en cualquier momento.'
     ]
+  },
+
+  {
+    id: 'deletion',
+    title: '6. Conservación y Eliminación de Datos',
+    icon: <Database size={20} />,
+    type: 'text',
+    content: `
+Conservamos los datos solo mientras el usuario continúa utilizando Harold.  
+Si el usuario solicita “elimina mis datos”, procedemos a:
+
+• Borrar toda la colección del usuario en Firebase.  
+• Eliminar recordatorios, listas, reuniones y contactos almacenados.  
+• Eliminar tokens de Google Calendar.  
+• No almacenamos logs de WhatsApp más allá de la metadata técnica.  
+
+Una vez eliminados, no existe forma de recuperarlos.`
+  },
+
+  {
+    id: 'security',
+    title: '7. Seguridad',
+    icon: <ShieldCheck size={20} />,
+    type: 'text',
+    content: `
+Utilizamos medidas de seguridad estándar de la industria, tales como:
+
+• Firestore con reglas de acceso restringidas.  
+• Autenticación segura con Google OAuth.  
+• Comunicación cifrada con todos los servicios externos.  
+• Control de acceso interno y registros de actividad.  
+
+Aun así, ningún sistema es 100% infalible, pero tomamos todas las medidas razonables para proteger sus datos.`
   }
 ];
 
 export default function PrivacyPolicy() {
+  const navigate = useNavigate();
+
   const [activeSection, setActiveSection] = useState('info-collection');
 
-  // --- Scroll Spy Logic (Reutilizable) ---
+  // --- Scroll Spy Logic ---
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -85,8 +187,14 @@ export default function PrivacyPolicy() {
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
-      
-      {/* --- HERO HEADER --- */}
+            <button
+        onClick={() => navigate("/")}
+        className="inline-flex items-center gap-2 text-slate-700 hover:text-slate-900 bg-white border border-slate-300 px-4 py-2 rounded-lg shadow-sm hover:bg-slate-100 transition-all"
+      >
+        ← Volver al inicio
+      </button>
+
+      {/* HEADER */}
       <div className="bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="max-w-3xl">
@@ -98,16 +206,17 @@ export default function PrivacyPolicy() {
               Política de Privacidad
             </h1>
             <p className="text-xl text-slate-600 leading-relaxed">
-              Nos tomamos su privacidad en serio. Esta política describe de forma transparente qué datos recopilamos, por qué lo hacemos y cómo los protegemos.
+              Esta política describe qué datos recopilamos, por qué lo hacemos y cómo los protegemos dentro del asistente Harold.
             </p>
           </div>
         </div>
       </div>
 
+      {/* BODY */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="lg:grid lg:grid-cols-12 lg:gap-12">
-          
-          {/* --- SIDEBAR NAVIGATION --- */}
+
+          {/* SIDEBAR */}
           <aside className="hidden lg:block lg:col-span-3">
             <nav className="sticky top-24 space-y-1">
               {privacySections.map((section) => (
@@ -123,15 +232,14 @@ export default function PrivacyPolicy() {
                   <span className={activeSection === section.id ? 'text-emerald-600' : 'text-slate-400'}>
                     {section.icon}
                   </span>
-                  {section.title.split('. ')[1]} {/* Muestra solo el nombre sin el número */}
+                  {section.title.split('. ')[1]}
                 </button>
               ))}
             </nav>
           </aside>
 
-          {/* --- MAIN CONTENT --- */}
+          {/* MAIN CONTENT */}
           <main className="lg:col-span-9 space-y-16">
-            
             {privacySections.map((section) => (
               <section key={section.id} id={section.id} className="scroll-mt-28">
                 <div className="flex items-center gap-3 mb-6">
@@ -143,10 +251,8 @@ export default function PrivacyPolicy() {
                   </h2>
                 </div>
 
-                {/* LOGICA DE RENDERIZADO SEGÚN TIPO */}
                 <div className="prose prose-slate prose-lg max-w-none text-slate-600">
-                  
-                  {/* CASO: TABLA DE DATOS */}
+
                   {section.type === 'table' && (
                     <div className="overflow-hidden rounded-xl border border-slate-200 shadow-sm bg-white not-prose">
                       <table className="min-w-full divide-y divide-slate-200">
@@ -170,7 +276,6 @@ export default function PrivacyPolicy() {
                     </div>
                   )}
 
-                  {/* CASO: TARJETAS DE TERCEROS */}
                   {section.type === 'cards' && (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose">
                       {section.content.map((provider, idx) => (
@@ -183,7 +288,6 @@ export default function PrivacyPolicy() {
                     </div>
                   )}
 
-                  {/* CASO: LISTA */}
                   {section.type === 'list' && (
                     <ul className="grid gap-2">
                       {section.content.map((item, idx) => (
@@ -195,19 +299,17 @@ export default function PrivacyPolicy() {
                     </ul>
                   )}
 
-                  {/* CASO: TEXTO STANDARD */}
                   {section.type === 'text' && <p>{section.content}</p>}
-                
                 </div>
               </section>
             ))}
 
-            {/* --- CONTACT BOX --- */}
+            {/* CONTACTO */}
             <div className="mt-12 bg-slate-900 text-white rounded-2xl p-8 md:p-10 text-center md:text-left md:flex md:items-center md:justify-between">
               <div>
                 <h3 className="text-2xl font-bold mb-2">¿Dudas sobre su privacidad?</h3>
                 <p className="text-slate-300 mb-6 md:mb-0 max-w-md">
-                  Nuestro Oficial de Protección de Datos (DPO) está disponible para responder sus inquietudes.
+                  Estamos disponibles para responder cualquier inquietud relacionada con el uso de sus datos.
                 </p>
               </div>
               <a 
@@ -215,7 +317,7 @@ export default function PrivacyPolicy() {
                 className="inline-flex items-center justify-center gap-2 bg-white text-slate-900 px-6 py-3 rounded-lg font-bold hover:bg-emerald-50 transition-colors"
               >
                 <Mail size={18} />
-                privacy@midominio.com
+                bpesociedad@gmail.com
               </a>
             </div>
 

@@ -1,0 +1,13 @@
+runtime: nodejs20
+service: harold
+
+handlers:
+  # Archivos estáticos (css, js, imágenes, etc.)
+  - url: /(.*\.(css|js|png|jpg|jpeg|gif|svg|ico|json))$
+    static_files: build/\1
+    upload: build/(.*)
+
+  # Rutas del Router (React Router DOM)
+  - url: /.*
+    static_files: build/index.html
+    upload: build/index.html

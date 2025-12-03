@@ -50,20 +50,21 @@ function SinglePricing() {
               <p className="text-sm text-slate-500 line-through mb-8">Antes 16.617 CLP</p>
 
               {/* Botón CTA */}
-              <button className="group relative w-full py-4 rounded-xl font-bold text-white text-lg overflow-hidden transition-all hover:scale-[1.02] active:scale-[0.98]">
-                {/* Gradiente de fondo */}
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 bg-[length:200%_auto] animate-gradient"></div>
-                
-                {/* Contenido botón */}
-                <span className="relative z-10 flex items-center justify-center gap-2">
-                  Probar gratis ahora
-                  <Zap className="w-5 h-5 fill-white" />
-                </span>
-              </button>
+<button
+  onClick={() => window.open("https://buy.stripe.com/9B6cN57JgcB61tK9y29ws0o", "_blank")}
+  className="group relative w-full py-4 rounded-xl font-bold text-white text-lg overflow-hidden transition-all hover:scale-[1.02] active:scale-[0.98]"
+>
+  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 bg-[length:200%_auto] animate-gradient"></div>
+  <span className="relative z-10 flex items-center justify-center gap-2">
+    Probar ahora
+    <Zap className="w-5 h-5 fill-white" />
+  </span>
+</button>
+
 
               <div className="mt-6 flex items-center justify-center gap-2 text-xs text-slate-500">
                 <ShieldCheck className="w-4 h-4 text-green-500" />
-                <span>14 días de garantía. Sin preguntas.</span>
+                <span>7 días de garantía. Sin preguntas.</span>
               </div>
             </div>
 
