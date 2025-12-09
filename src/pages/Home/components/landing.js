@@ -34,11 +34,11 @@ function LandingPage() {
         <div className="w-full md:w-1/2 pt-10 md:pt-0 mb-16 md:mb-0 space-y-8 z-10 text-slate-300">
           <h1 className="text-5xl md:text-7xl font-bold leading-[1.1] tracking-tight">
             Simplifica tu día <br className="m-1"/>
-            con  <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-400"> Kadet</span>
+            con  <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-400"> HaroldIA</span>
           </h1>
           
           <p className="text-lg md:text-xl text-slate-500 max-w-md leading-relaxed">
-            Kadet es el asistente personal que necesitas las 24 horas. Déjalo gestionar tu agenda, contratar servicios, hacer reservas y recordarte tus pendientes importantes. Además, recibirás las noticias cada mañana. Todo fácil, rápido y gratis.
+            HaroldIA es el asistente personal que necesitas las 24 horas. Déjalo gestionar tu agenda, contratar servicios, hacer reservas y recordarte tus pendientes importantes. Además, recibirás las noticias cada mañana. Todo fácil, rápido y gratis.
           </p>
 
      
@@ -71,7 +71,7 @@ function LandingPage() {
                   K
                 </div>
                 <div className="flex flex-col">
-                    <span className="text-sm font-semibold flex items-center gap-1"> Kadet
+                    <span className="text-sm font-semibold flex items-center gap-1"> HaroldIA
                          
                         <div className="bg-green-500 rounded-full p-[1px]">
                             <Check className="w-2 h-2 text-white" strokeWidth={4} />
