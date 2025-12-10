@@ -2,7 +2,7 @@ import { Check, Sparkles, ShieldCheck, Zap } from "lucide-react";
 
 function SinglePricing() {
   return (
-    <div className="min-h-screen bg-slate-950 flex flex-col items-center justify-center p-6 relative overflow-hidden font-sans text-slate-200 selection:bg-purple-500 selection:text-white">
+    <div className="min-h-screen flex flex-col items-center justify-center p-6 relative overflow-hidden font-sans text-slate-200 selection:bg-purple-500 selection:text-white">
       
       {/* --- FONDO AMBIENTAL (Nebulosa) --- */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-purple-600/20 rounded-full blur-[120px] pointer-events-none" />

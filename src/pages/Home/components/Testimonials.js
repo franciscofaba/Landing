@@ -53,7 +53,7 @@ const testimonials = [
 
 function Testimonials() {
   return (
-    <section className="bg-slate-50 py-20 px-6 font-sans text-slate-900">
+    <section className=" py-20 px-6 font-sans text-slate-100">
       
       {/* HEADER SECTION */}
       <div className="max-w-4xl mx-auto text-center mb-16">
@@ -64,7 +64,7 @@ function Testimonials() {
           <br />
           se han olvidado de olvidar
         </h2>
-        <p className="text-slate-500 text-lg md:text-xl max-w-2xl mx-auto">
+        <p className="text-slate-100 text-lg md:text-xl max-w-2xl mx-auto">
           Únete a la comunidad que ha decidido dejar de confiar en su memoria y empezar a confiar en su sistema.
         </p>
       </div>
