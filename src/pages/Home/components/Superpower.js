@@ -98,7 +98,7 @@ function SuperpowersSection() {
         </div>
 
         {/* Layout Principal: Grid de 2 Columnas */}
-        <div className="grid lg:grid-cols-12 gap-12 items-center">
+        <div className="grid lg:grid-cols-12 gap-12 items-center bg-gray-950/80 p-5 rounded-xl">
           {/* COLUMNA IZQUIERDA: Navegación / Lista */}
           <div className="lg:col-span-5 flex flex-col gap-4">
             {features.map((feature, index) => {
@@ -217,7 +217,7 @@ function SuperpowersSection() {
                   className="flex justify-start animate-fade-in-left"
                   style={{ animationDelay: "150ms" }}
                 >
-                  <div className="max-w-[85%] bg-slate-100  text-neutral-800 rounded-2xl rounded-tl-sm p-4 text-slate-200 text-sm shadow-lg border border-slate-300">
+                  <div className="max-w-[85%] bg-slate-100  text-neutral-700 rounded-2xl rounded-tl-sm p-4 text-slate-200 text-sm shadow-lg border border-slate-300">
                     <p>{features[activeTab].chat.bot}</p>
                     <div className="mt-2 text-[10px] text-slate-400">
                       Justo ahora

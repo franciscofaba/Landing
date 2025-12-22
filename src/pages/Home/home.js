@@ -9,24 +9,23 @@ import Testimonials from "./components/Testimonials";
 import SinglePricing from "./components/Singlepricing";
 function Home() {
   return (
-    <div className="">
-          <Navbar></Navbar>
-          <LandingPage></LandingPage>
-          <AppHero></AppHero>
-          <Feature></Feature>
-          <SuperpowersSection></SuperpowersSection>
-          <Testimonials></Testimonials>
-          <SinglePricing></SinglePricing>
-          <Bottomfooter></Bottomfooter>
+    <>
+      <Navbar></Navbar>
+      <LandingPage></LandingPage>
+      <AppHero></AppHero>
+      <Feature></Feature>
+      <SuperpowersSection></SuperpowersSection>
+      <Testimonials></Testimonials>
+      <SinglePricing></SinglePricing>
+      <Bottomfooter></Bottomfooter>
       <body>
         <div>
-        
           <div class="wave"></div>
           <div class="wave"></div>
           <div class="wave"></div>
         </div>
       </body>
-    </div>
+    </>
   );
 }
 

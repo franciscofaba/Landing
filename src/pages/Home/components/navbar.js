@@ -9,7 +9,7 @@ function Navbar() {
     <nav className="fixed w-full z-50 mt-5 px-4">
       <div 
         className={`
-          max-w-6xl mx-auto bg-black/20 backdrop-blur-md 
+          max-w-6xl mx-auto bg-white/70 backdrop-blur-md 
           shadow-md shadow-cyan-300/50 border border-white 
           transition-all duration-300 ease-in-out overflow-hidden
           ${isOpen ? 'rounded-[32px]' : 'rounded-xl'} // Cambia la forma al abrir
@@ -24,13 +24,13 @@ function Navbar() {
 
           {/* DESKTOP MENU (Hidden on mobile) */}
           <div className="hidden md:flex gap-6 items-center">
-            <a href="#features" className="text-sm font-medium text-gray-50 hover:text-gray-200 transition-colors">
+            <a href="#features" className="text-md  text-black hover:text-gray-200 transition-colors">
               Características
             </a>
-            <a href="#pricing" className="text-sm font-medium text-gray-50 hover:text-gray-200 transition-colors">
+            <a href="#pricing" className="text-md  text-black hover:text-gray-200 transition-colors">
               Precios
             </a>
-            <button className="px-4 py-2 text-sm font-medium bg-black text-white rounded-full hover:bg-gray-800 transition-all active:scale-95">
+            <button className="px-4 py-2 text-md font-medium bg-black text-white rounded-full hover:bg-gray-800 transition-all active:scale-95">
               Empezar
             </button>
           </div>
