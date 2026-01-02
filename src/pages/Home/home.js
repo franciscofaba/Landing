@@ -14,9 +14,13 @@ function Home() {
       <LandingPage></LandingPage>
       <AppHero></AppHero>
       <Feature></Feature>
-      <SuperpowersSection></SuperpowersSection>
+      <section id="features">
+        <SuperpowersSection></SuperpowersSection>
+      </section>
       <Testimonials></Testimonials>
-      <SinglePricing></SinglePricing>
+      <section id="pricing">
+        <SinglePricing></SinglePricing>
+      </section>
       <Bottomfooter></Bottomfooter>
       <body>
         <div>

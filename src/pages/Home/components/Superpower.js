@@ -63,23 +63,25 @@ const features = [
       time: "14:15",
     },
   },
-  {
-    id: 3,
-    title: "Recordatorios entre amigos",
-    desc: "Dile a Memorae qué decir y a quién. Se lo recordará cuando toque.",
-    icon: Users,
-    color: "bg-orange-500",
-    chat: {
-      user: "Recuérdale a Marcos que me mande el informe el lunes",
-      bot: "¡Oído! Le recordaré a Marcos sobre el informe el lunes a las 10:30.",
-      time: "11:20",
-    },
-  },
 ];
 
 function SuperpowersSection() {
   const [activeTab, setActiveTab] = useState(0);
 
+  const handleScroll = (e, id) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
   return (
     <section className="min-h-screen  text-white py-20 px-6 flex flex-col items-center justify-center font-sans selection:bg-purple-500 selection:text-white">
       <div className="max-w-6xl w-full">
@@ -163,7 +165,6 @@ function SuperpowersSection() {
 
             {/* Mockup del Chat */}
             <div className="relative w-full max-w-md bg-slate-100 rounded-3xl border border-slate-800 p-6 shadow-xl z-10 transition-all duration-500 transform key={activeTab}">
-              
               {/* HEADER DEL CHAT */}
               <div className="bg-[#F5F5F5 mb-3 pb-3  flex items-center justify-between border-b border-slate-200 z-40 relative">
                 <div className="flex items-center gap-2">
@@ -202,10 +203,10 @@ function SuperpowersSection() {
                 {/* Mensaje Usuario (Derecha) */}
                 <div className="flex justify-end animate-fade-in-right">
                   <div
-                    className={`max-w-[85%] rounded-2xl rounded-tr-sm p-4 text-white text-sm shadow-lg ${features[activeTab].color}`}
+                    className={`max-w-[85%] rounded-2xl rounded-tr-sm p-4 text-sm shadow-lg ${features[activeTab].color}`}
                   >
                     {features[activeTab].chat.user}
-                    <div className="mt-2 text-[10px] text-white/70 text-right flex items-center justify-end gap-1">
+                    <div className="mt-2 text-[10px] text-right flex items-center justify-end gap-1">
                       {features[activeTab].chat.time}
                       <span className="opacity-80">✓✓</span>
                     </div>
@@ -217,7 +218,7 @@ function SuperpowersSection() {
                   className="flex justify-start animate-fade-in-left"
                   style={{ animationDelay: "150ms" }}
                 >
-                  <div className="max-w-[85%] bg-slate-100  text-neutral-700 rounded-2xl rounded-tl-sm p-4 text-slate-200 text-sm shadow-lg border border-slate-300">
+                  <div className="max-w-[85%] bg-slate-100  text-gray-700 rounded-2xl rounded-tl-sm p-4  text-sm shadow-lg border border-slate-300">
                     <p>{features[activeTab].chat.bot}</p>
                     <div className="mt-2 text-[10px] text-slate-400">
                       Justo ahora
@@ -231,12 +232,14 @@ function SuperpowersSection() {
 
         {/* CTA Footer */}
         <div className="mt-20 text-center">
-          <button className="group relative inline-flex items-center gap-3 px-8 py-4 bg-white text-slate-950 rounded-full font-bold text-lg transition-transform hover:-translate-y-1 active:scale-95">
-            Descubre todos los superpoderes
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            {/* Brillo sutil en el botón */}
-            <div className="absolute inset-0 rounded-full ring-2 ring-white/50 animate-pulse"></div>
-          </button>
+          <a href="#pricing" onClick={(e) => handleScroll(e, "pricing")}>
+            <button className="group relative inline-flex items-center gap-3 px-8 py-4 bg-white text-slate-950 rounded-full font-bold text-lg transition-transform hover:-translate-y-1 active:scale-95">
+              Descubre todos los superpoderes
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              {/* Brillo sutil en el botón */}
+              <div className="absolute inset-0 rounded-full ring-2 ring-white/50 animate-pulse"></div>
+            </button>
+          </a>
         </div>
       </div>
 
