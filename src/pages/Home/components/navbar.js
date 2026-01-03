@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Menu, X } from "lucide-react"; // Necesitamos estos iconos
 
 function Navbar() {
@@ -94,11 +94,11 @@ function Navbar() {
           >
             Precios
           </a>
-          <button className="w-full py-3 text-sm font-bold bg-black text-white rounded-xl hover:bg-gray-800 transition-all active:scale-95">
-            <a href="#pricing" onClick={(e) => handleScroll(e, "pricing")}>
+          <a href="#pricing" onClick={(e) => handleScroll(e, "pricing")}>
+            <button className="w-full py-3 text-sm font-bold bg-black text-white rounded-xl hover:bg-gray-800 transition-all active:scale-95">
               Empezar ahora
-            </a>
-          </button>
+            </button>
+          </a>
         </div>
       </div>
     </nav>

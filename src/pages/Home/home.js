@@ -19,6 +19,7 @@ function Home() {
       </section>
       <Testimonials></Testimonials>
       <section id="pricing">
+        
         <SinglePricing></SinglePricing>
       </section>
       <Bottomfooter></Bottomfooter>

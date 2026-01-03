@@ -3,7 +3,6 @@ import {
   Mic,
   CalendarDays,
   StickyNote,
-  Users,
   ArrowRight,
   Play,
   ChevronLeft,
@@ -39,7 +38,7 @@ const features = [
   {
     id: 2,
     title: "Voz a Tareas",
-    desc: "Tu voz es suficiente. Memorae escucha, transcribe y organiza lo que dices.",
+    desc: "Tu voz es suficiente. Harold escucha, transcribe y organiza lo que dices.",
     icon: Mic,
     color: "bg-purple-500",
     chat: {
@@ -82,11 +81,13 @@ function SuperpowersSection() {
       });
     }
   };
+
   return (
-    <section className="min-h-screen  text-white py-20 px-6 flex flex-col items-center justify-center font-sans selection:bg-purple-500 selection:text-white">
+    // CAMBIO: px-4 en vez de px-6 para ganar espacio en bordes de móviles
+    <section className="min-h-screen text-white py-12 md:py-20 px-4 md:px-6 flex flex-col items-center justify-center font-sans selection:bg-purple-500 selection:text-white">
       <div className="max-w-6xl w-full">
         {/* Header */}
-        <div className="mb-16 md:text-center max-w-2xl mx-auto">
+        <div className="mb-12 md:mb-16 md:text-center max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">
             Superpoderes para gente que <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-400">
@@ -100,9 +101,12 @@ function SuperpowersSection() {
         </div>
 
         {/* Layout Principal: Grid de 2 Columnas */}
-        <div className="grid lg:grid-cols-12 gap-12 items-center bg-gray-950/80 p-5 rounded-xl">
+        {/* CAMBIO: p-3 en móvil en lugar de p-5. Gap reducido en móvil */}
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-gray-950/80 p-3 md:p-8 rounded-xl">
+          
           {/* COLUMNA IZQUIERDA: Navegación / Lista */}
-          <div className="lg:col-span-5 flex flex-col gap-4">
+          {/* Orden natural: Botones arriba, chat abajo en móvil */}
+          <div className="lg:col-span-5 flex flex-col gap-3 md:gap-4">
             {features.map((feature, index) => {
               const isActive = activeTab === index;
               const Icon = feature.icon;
@@ -111,7 +115,8 @@ function SuperpowersSection() {
                 <button
                   key={feature.id}
                   onClick={() => setActiveTab(index)}
-                  className={`group text-left p-6 rounded-2xl transition-all duration-300 border border-transparent
+                  // CAMBIO: Padding reducido en botones para móvil (p-4 vs p-6)
+                  className={`group text-left p-4 md:p-6 rounded-2xl transition-all duration-300 border border-transparent
                     ${
                       isActive
                         ? "bg-slate-900 border-slate-800 shadow-2xl shadow-purple-900/10 ring-1 ring-slate-700/50"
@@ -133,7 +138,7 @@ function SuperpowersSection() {
                     </div>
                     <div>
                       <h3
-                        className={`text-lg font-bold mb-2 transition-colors ${
+                        className={`text-lg font-bold mb-1 md:mb-2 transition-colors ${
                           isActive
                             ? "text-white"
                             : "text-slate-400 group-hover:text-slate-200"
@@ -156,21 +161,22 @@ function SuperpowersSection() {
           </div>
 
           {/* COLUMNA DERECHA: Visualización Dinámica */}
-          <div className="lg:col-span-7 relative h-[500px] bg-slate-900 rounded-[40px] border border-slate-800 shadow-2xl flex items-center justify-center p-8 overflow-hidden">
+          {/* CAMBIO: p-3 en móvil en lugar de p-8. Altura ajustada */}
+          <div className="lg:col-span-7 relative h-[450px] md:h-[500px] bg-slate-900 rounded-[30px] md:rounded-[40px] border border-slate-800 shadow-2xl flex items-center justify-center p-3 md:p-8 overflow-hidden">
             {/* Elementos decorativos de fondo (Glow) */}
             <div
-              className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full blur-[100px] opacity-20 transition-colors duration-700 ${features[activeTab].color}`}
+              className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 md:w-96 md:h-96 rounded-full blur-[80px] md:blur-[100px] opacity-20 transition-colors duration-700 ${features[activeTab].color}`}
             ></div>
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
 
             {/* Mockup del Chat */}
-            <div className="relative w-full max-w-md bg-slate-100 rounded-3xl border border-slate-800 p-6 shadow-xl z-10 transition-all duration-500 transform key={activeTab}">
+            {/* CAMBIO: w-full asegura que use todo el ancho disponible */}
+            <div className="relative w-full max-w-md bg-slate-100 rounded-3xl border border-slate-800 p-4 md:p-6 shadow-xl z-10 transition-all duration-500 transform key={activeTab}">
               {/* HEADER DEL CHAT */}
-              <div className="bg-[#F5F5F5 mb-3 pb-3  flex items-center justify-between border-b border-slate-200 z-40 relative">
+              <div className="bg-[#F5F5F5] mb-3 pb-3 flex items-center justify-between border-b border-slate-200 z-40 relative">
                 <div className="flex items-center gap-2">
                   <ChevronLeft className="text-blue-500 w-6 h-6 cursor-pointer" />
 
-                  {/* CORRECCIÓN 2: Aquí integramos la Mascota correctamente */}
                   <div className="relative">
                     <img
                       src="/HaroldIA.jpg"
@@ -203,7 +209,7 @@ function SuperpowersSection() {
                 {/* Mensaje Usuario (Derecha) */}
                 <div className="flex justify-end animate-fade-in-right">
                   <div
-                    className={`max-w-[85%] rounded-2xl rounded-tr-sm p-4 text-sm shadow-lg ${features[activeTab].color}`}
+                    className={`max-w-[85%] rounded-2xl rounded-tr-sm p-3 md:p-4 text-sm shadow-lg ${features[activeTab].color}`}
                   >
                     {features[activeTab].chat.user}
                     <div className="mt-2 text-[10px] text-right flex items-center justify-end gap-1">
@@ -218,7 +224,7 @@ function SuperpowersSection() {
                   className="flex justify-start animate-fade-in-left"
                   style={{ animationDelay: "150ms" }}
                 >
-                  <div className="max-w-[85%] bg-slate-100  text-gray-700 rounded-2xl rounded-tl-sm p-4  text-sm shadow-lg border border-slate-300">
+                  <div className="max-w-[90%] md:max-w-[85%] bg-slate-100 text-gray-700 rounded-2xl rounded-tl-sm p-3 md:p-4 text-sm shadow-lg border border-slate-300">
                     <p>{features[activeTab].chat.bot}</p>
                     <div className="mt-2 text-[10px] text-slate-400">
                       Justo ahora
@@ -231,9 +237,9 @@ function SuperpowersSection() {
         </div>
 
         {/* CTA Footer */}
-        <div className="mt-20 text-center">
+        <div className="mt-12 md:mt-20 text-center">
           <a href="#pricing" onClick={(e) => handleScroll(e, "pricing")}>
-            <button className="group relative inline-flex items-center gap-3 px-8 py-4 bg-white text-slate-950 rounded-full font-bold text-lg transition-transform hover:-translate-y-1 active:scale-95">
+            <button className="group relative inline-flex items-center gap-3 px-6 py-3 md:px-8 md:py-4 bg-white text-slate-950 rounded-full font-bold text-base md:text-lg transition-transform hover:-translate-y-1 active:scale-95">
               Descubre todos los superpoderes
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               {/* Brillo sutil en el botón */}
@@ -243,7 +249,6 @@ function SuperpowersSection() {
         </div>
       </div>
 
-      {/* Estilos para animaciones simples sin config extra */}
       <style>{`
         @keyframes fadeInRight {
           from { opacity: 0; transform: translateX(20px); }

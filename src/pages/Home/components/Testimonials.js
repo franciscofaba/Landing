@@ -3,53 +3,54 @@ import { Star, Quote } from "lucide-react";
 const testimonials = [
   {
     id: 1,
-    title: "Herramienta del año",
-    text: "Sin duda, es la mejor herramienta a la que me he suscrito este año. ¡Seguid así! Me ha permitido limpiar mi flujo de trabajo de una manera que no creía posible.",
-    author: "Christopher Fox",
-    role: "Fundador",
-    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?fit=crop&w=100&h=100",
+    title: "Un alivio para el día a día",
+    text: "Entre la pega, los niños y la casa, siempre se me olvidaba algo. Con esta herramienta tengo todo ordenado y mi cabeza mucho más tranquila.",
+    author: "Carolina Muñoz",
+    role: "Mamá, 38 años",
+    avatar: "Avatar_1.png",
   },
   {
     id: 2,
-    title: "Game-changer",
-    text: "Tengo TDAH y esta herramienta me ha cambiado la vida por completo. ¡Es como tener un segundo cerebro! 🧠 La capacidad de soltar ideas y que se ordenen solas es mágica.",
-    author: "Robbie Lockie",
-    role: "Fundador",
-    avatar: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?fit=crop&w=100&h=100",
+    title: "Me cambió la rutina",
+    text: "Antes vivía anotando cosas en cualquier parte. Ahora tengo todo en un solo lugar y no se me pasa nada importante.",
+    author: "Felipe Rojas",
+    role: "Papá, ingeniero",
+    avatar: "Avatar_2.png",
   },
   {
     id: 3,
-    title: "Es un salvavidas",
-    text: "¡Gracias a Memorae! Es algo que me ha cambiado y salvado la vida. Ayer descubrí la función de recordatorios de amigos y fue como: ¡wooooooooooooooow!",
-    author: "Yukari Aotani",
-    role: "Violinista",
-    avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?fit=crop&w=100&h=100",
+    title: "Ideal para mamás multitask",
+    text: "Es como tener una asistente personal. Recordatorios del colegio, médicos, pagos… todo a tiempo.",
+    author: "Natalia Soto",
+    role: "Mamá de dos",
+    avatar: "Avatar_3.png",
   },
   {
     id: 4,
-    title: "¡Un milagro!",
-    text: "Una maravilla. Ahora mi memoria ya tiene nombre y se llama Memorae.",
-    author: "Sergio Argüero",
-    role: "Asesor financiero",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=100&h=100",
+    title: "Orden mental total",
+    text: "Tengo mil ideas al día y siempre se me olvidaban. Esto me ayudó a ordenar mi cabeza y avanzar de verdad.",
+    author: "Tomás Vergara",
+    role: "25 años, diseñador",
+    avatar: "Avatar_4.png",
   },
   {
     id: 5,
-    title: "El mejor invento del siglo",
-    text: "Desde que la uso ya es imposible que se me olvide algo. ¡Imaginad ahora que también puedo hacer que no se le olvide a los demás! El mejor invento del siglo para gente que vivimos a 200km/h.",
-    author: "Fabiola Pérez",
-    role: "Dentista",
-    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?fit=crop&w=100&h=100",
+    title: "Un antes y un después",
+    text: "No pensé que algo tan simple pudiera ayudar tanto. Ahora estoy mucho más organizado y menos estresado.",
+    author: "Rodrigo León",
+    role: "Papá, 42 años",
+    avatar: "Avatar_5.png",
   },
   {
     id: 6,
-    title: "Lo mejor que me ha pasado",
-    text: "La mejor herramienta a la que me he suscrito. No he vuelto a olvidar una tarea, ni un regalo. Ha sido una de las mejores inversiones de mi vida.",
-    author: "Laura Fernández",
-    role: "Marketing Manager",
-    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?fit=crop&w=100&h=100",
+    title: "Perfecta para la vida adulta real",
+    text: "Es simple, rápida y realmente funciona. No es otra app más que uno deja botada.",
+    author: "Camila Fuentes",
+    role: "Marketing Manager, 27 años.",
+    avatar: "Avatar_6.png",
   },
 ];
+
 
 function Testimonials() {
   return (
@@ -59,13 +60,13 @@ function Testimonials() {
       <div className="max-w-4xl mx-auto text-center mb-16">
         <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 font-extrabold">
-            +60k personas
+           Una comunidad
           </span>
           <br />
-          se han olvidado de olvidar
+         que no deja de crecer 
         </h2>
         <p className="text-slate-100 text-lg md:text-xl max-w-2xl mx-auto">
-          Únete a la comunidad que ha decidido dejar de confiar en su memoria y empezar a confiar en su sistema.
+         Da el siguiente paso con Harold AI y descubre por qué tantos usuarios han decidido confiar en un asistente que realmente ayuda.
         </p>
       </div>
 
