@@ -1,5 +1,7 @@
 runtime: nodejs20
 
+service: harold
+
 handlers:
   # Archivos estáticos (css, js, imágenes, etc.)
   - url: /(.*\.(css|js|png|jpg|jpeg|gif|svg|ico|json))$
