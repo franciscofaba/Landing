@@ -96,7 +96,7 @@ function LandingPage() {
                   {/* --- PANTALLA APP (GIF CORREGIDO) --- */}
                   <div className="w-full h-full bg-black">
                     <img 
-                        src="HaroldIA.gif" 
+                        src="Harold.gif" 
                         alt="" 
                         className="w-full h-full object-cover"
                     />
