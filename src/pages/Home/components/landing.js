@@ -97,7 +97,7 @@ function LandingPage() {
                   <div className="w-full h-full bg-black">
                     <img 
                         src="Harold.gif" 
-                        alt="" 
+                        alt="aa" 
                         className="w-full h-full object-cover"
                     />
                   </div>
