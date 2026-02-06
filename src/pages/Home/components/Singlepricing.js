@@ -1,6 +1,19 @@
 import { Check, Sparkles, ShieldCheck, Zap } from "lucide-react";
-
+import ReactPixel from 'react-facebook-pixel'; // 1. Importa el Pixel
 function SinglePricing() {
+  // 2. Crea la función de rastreo
+  const handlePaymentClick = () => {
+    // Registra el evento en Meta
+    ReactPixel.track('InitiateCheckout', {
+      content_name: 'Plan Supernova',
+      content_category: 'Suscripción',
+      value: 10,
+      currency: 'USD'
+    });
+
+    // Redirige a Stripe
+    window.open("https://buy.stripe.com/9B6cN57JgcB61tK9y29ws0o", "_blank");
+  };
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-6 relative overflow-hidden font-sans text-slate-200 selection:bg-purple-500 selection:text-white">
       {/* --- FONDO AMBIENTAL (Nebulosa) --- */}
@@ -48,36 +61,31 @@ function SinglePricing() {
               {/* Precio */}
               <div className="flex items-baseline gap-2 mb-2">
                 <span className="text-5xl md:text-6xl font-bold text-white tracking-tight">
-                  9.970
+                  10
                 </span>
                 <span className="text-xl text-slate-400 font-medium">
-                  CLP / mes
+                  USD / mes
                 </span>
               </div>
               <p className="text-sm text-slate-500 line-through mb-8">
-                Antes 16.617 CLP
+                Antes 35 USD
               </p>
 
               {/* Botón CTA */}
               <button
-                onClick={() =>
-                  window.open(
-                    "https://buy.stripe.com/9B6cN57JgcB61tK9y29ws0o",
-                    "_blank"
-                  )
-                }
+                onClick={handlePaymentClick} // Usa la nueva función aquí
                 className="group relative w-full py-4 rounded-xl font-bold text-white text-lg overflow-hidden transition-all hover:scale-[1.02] active:scale-[0.98]"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 bg-[length:200%_auto] animate-gradient"></div>
                 <span className="relative z-10 flex items-center justify-center gap-2">
-                  Probar ahora
+                  Ir al checkout
                   <Zap className="w-5 h-5 fill-white" />
                 </span>
               </button>
 
               <div className="mt-6 flex items-center justify-center gap-2 text-xs text-slate-500">
                 <ShieldCheck className="w-4 h-4 text-green-500" />
-                <span>7 días de garantía. Sin preguntas.</span>
+                <span>Reembolso durante los primeros 7 dias. Sin preguntas.</span>
               </div>
             </div>
 
@@ -91,12 +99,12 @@ function SinglePricing() {
               <div className="grid md:grid-cols-2 gap-x-8 gap-y-6">
                 <FeatureItem text="Recordatorios ilimitados" />
                 <FeatureItem text="Memoria a largo plazo (AI)" />
-                <FeatureItem text="Integración multi-calendario" />
-                <FeatureItem text="Resumen diario inteligente" />
-                <FeatureItem text="Recordatorios entre amigos" />
+                <FeatureItem text="Integración con calendario" />
+                <FeatureItem text="Resumen inteligente" />
+                <FeatureItem text="Harold te llama cuando lo necesites" />
                 <FeatureItem text="Acción desde imágenes" />
                 <FeatureItem text="Soporte prioritario" highlighted />
-                <FeatureItem text="Panel de Control Total" />
+                <FeatureItem text="Control Total" />
               </div>
 
               {/* Caja de Bonus (Opcional para rellenar espacio y dar valor) */}

@@ -23,13 +23,11 @@ function Home() {
         <SinglePricing></SinglePricing>
       </section>
       <Bottomfooter></Bottomfooter>
-      <body>
-        <div>
-          <div class="wave"></div>
-          <div class="wave"></div>
-          <div class="wave"></div>
-        </div>
-      </body>
+<div className="wave-container"> 
+  <div className="wave"></div>
+  <div className="wave"></div>
+  <div className="wave"></div>
+</div>
     </>
   );
 }

@@ -7,7 +7,27 @@ function AppHero() {
       {/* Fondo Ambiental */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-gradient-to-tr from-emerald-500/20 to-blue-600/20 rounded-full blur-[80px] md:blur-[120px] pointer-events-none" />
 
-      {/* --- SECCIÓN DE TEXTO (CORREGIDA) --- */}
+      {/* --- NUEVA SECCIÓN: VIDEO DEMO (Estilo Memorae) --- */}
+      {/* Colocada 'sobre' el texto principal como solicitaste */}
+      <div className="relative z-20 w-full max-w-4xl mx-auto px-6 mb-16 mt-6 md:mt-0">
+        <div className="group relative w-full aspect-video rounded-3xl bg-slate-900/50 border border-white/10 shadow-2xl shadow-emerald-500/10 overflow-hidden">
+          {/* Efecto Glow trasero sutil */}
+          <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500/20 to-blue-500/20 blur-xl opacity-50 group-hover:opacity-75 transition duration-1000"></div>
+          
+          {/* Iframe de Loom */}
+          <iframe
+            src="https://www.loom.com/embed/d93baacd3af54e00907fc7190be6074e?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true"
+            frameBorder="0"
+            webkitallowfullscreen="true"
+            mozallowfullscreen="true"
+            allowFullScreen
+            className="absolute top-0 left-0 w-full h-full rounded-3xl relative z-10"
+            title="Harold Demo Video"
+          ></iframe>
+        </div>
+      </div>
+
+      {/* --- SECCIÓN DE TEXTO --- */}
       <div className="text-center max-w-4xl mx-auto mb-16 px-6 relative z-10 flex flex-col items-center">
         <h1 className="text-4xl sm:text-3xl md:text-5xl font-extrabold text-white tracking-tight leading-[1.1] mb-6 drop-shadow-sm">
           Con{" "}
