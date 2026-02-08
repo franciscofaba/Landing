@@ -26,7 +26,7 @@ const features = [
   {
     id: 1,
     title: "Calendarios unificados",
-    desc: "Google, Outlook. Tus citas y eventos conectados. Así no se te escapa nada.",
+    desc: "Google y próximamente outlook. Tus citas y eventos conectados. Así no se te escapa nada.",
     icon: CalendarDays,
     color: "bg-pink-500",
     chat: {
@@ -240,7 +240,7 @@ function SuperpowersSection() {
         <div className="mt-12 md:mt-20 text-center">
           <a href="#pricing" onClick={(e) => handleScroll(e, "pricing")}>
             <button className="group relative inline-flex items-center gap-3 px-6 py-3 md:px-8 md:py-4 bg-white text-slate-950 rounded-full font-bold text-base md:text-lg transition-transform hover:-translate-y-1 active:scale-95">
-              Descubre todos los superpoderes
+              Desbloquea todos los superpoderes
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               {/* Brillo sutil en el botón */}
               <div className="absolute inset-0 rounded-full ring-2 ring-white/50 animate-pulse"></div>

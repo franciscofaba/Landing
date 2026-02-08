@@ -7,12 +7,12 @@ function SinglePricing() {
     ReactPixel.track('InitiateCheckout', {
       content_name: 'Plan Supernova',
       content_category: 'Suscripción',
-      value: 10,
-      currency: 'USD'
+      value: 9990,
+      currency: 'CLP'
     });
 
     // Redirige a Stripe
-    window.open("https://buy.stripe.com/9B6cN57JgcB61tK9y29ws0o", "_blank");
+    window.open("https://buy.stripe.com/8x214nbZwasYegw7pU9ws0r", "_blank");
   };
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-6 relative overflow-hidden font-sans text-slate-200 selection:bg-purple-500 selection:text-white">
@@ -61,14 +61,14 @@ function SinglePricing() {
               {/* Precio */}
               <div className="flex items-baseline gap-2 mb-2">
                 <span className="text-5xl md:text-6xl font-bold text-white tracking-tight">
-                  10
+                  9.990
                 </span>
                 <span className="text-xl text-slate-400 font-medium">
-                  USD / mes
+                  CLP / mes
                 </span>
               </div>
               <p className="text-sm text-slate-500 line-through mb-8">
-                Antes 35 USD
+                Antes 19.990 CLP
               </p>
 
               {/* Botón CTA */}

@@ -35,6 +35,23 @@ function LandingPage() {
             Déjalo gestionar tu agenda, crear listas y recordarte tus pendientes
             importantes.
           </p>
+
+          {/* --- VIDEO DEMO (VISIBLE SOLO EN MÓVIL) --- */}
+          {/* Se oculta en pantallas medianas (md) hacia arriba */}
+          <div className="block md:hidden w-full max-w-md mx-auto my-6">
+            <div className="group relative w-full aspect-video rounded-2xl bg-slate-900/50 border border-white/10 shadow-2xl shadow-emerald-500/10 overflow-hidden">
+                <iframe
+                  src="https://www.loom.com/embed/d93baacd3af54e00907fc7190be6074e?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true"
+                  frameBorder="0"
+                  webkitallowfullscreen="true"
+                  mozallowfullscreen="true"
+                  allowFullScreen
+                  className="absolute top-0 left-0 w-full h-full rounded-2xl"
+                  title="Harold Demo Video Mobile"
+                ></iframe>
+            </div>
+          </div>
+
           <a href="#pricing" onClick={(e) => handleScroll(e, "pricing")}>
             <button className="bg-white text-slate-900 px-8 py-3 rounded-full font-medium hover:bg-slate-200 transition-all shadow-lg shadow-white/10 active:scale-95">
               Probar ahora

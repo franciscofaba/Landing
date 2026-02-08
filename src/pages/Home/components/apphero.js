@@ -7,9 +7,9 @@ function AppHero() {
       {/* Fondo Ambiental */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-gradient-to-tr from-emerald-500/20 to-blue-600/20 rounded-full blur-[80px] md:blur-[120px] pointer-events-none" />
 
-      {/* --- NUEVA SECCIÓN: VIDEO DEMO (Estilo Memorae) --- */}
-      {/* Colocada 'sobre' el texto principal como solicitaste */}
-      <div className="relative z-20 w-full max-w-4xl mx-auto px-6 mb-16 mt-6 md:mt-0">
+      {/* --- SECCIÓN VIDEO (VISIBLE SOLO EN PC/TABLET) --- */}
+      {/* Añadido 'hidden md:block' para que no se vea en móviles aquí */}
+      <div className="hidden md:block relative z-20 w-full max-w-4xl mx-auto px-6 mb-16 mt-6 md:mt-0">
         <div className="group relative w-full aspect-video rounded-3xl bg-slate-900/50 border border-white/10 shadow-2xl shadow-emerald-500/10 overflow-hidden">
           {/* Efecto Glow trasero sutil */}
           <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500/20 to-blue-500/20 blur-xl opacity-50 group-hover:opacity-75 transition duration-1000"></div>

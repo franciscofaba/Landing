@@ -7,6 +7,7 @@ import LandingPage from "./components/landing";
 import SuperpowersSection from "./components/Superpower";
 import Testimonials from "./components/Testimonials";
 import SinglePricing from "./components/Singlepricing";
+import HowItWorks from "./components/HowItWorks"; // <--- 1. IMPORTAR AQUI
 function Home() {
   return (
     <>
@@ -14,6 +15,9 @@ function Home() {
       <LandingPage></LandingPage>
       <AppHero></AppHero>
       <Feature></Feature>
+      <section id="how-it-works">
+        <HowItWorks />
+      </section>
       <section id="features">
         <SuperpowersSection></SuperpowersSection>
       </section>
